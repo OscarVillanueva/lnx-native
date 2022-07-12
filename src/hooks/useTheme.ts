@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {useColorScheme, StyleSheet} from 'react-native';
 
-const useTheme = () => {
+export const useTheme = () => {
   // Sacamos el tema que esta usando el sistema
   const scheme = useColorScheme();
 
