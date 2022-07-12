@@ -1,12 +1,24 @@
 import {useState, useEffect} from 'react';
 import {useColorScheme, StyleSheet} from 'react-native';
 
-export const useTheme = () => {
+type Theme = {
+  container: any,
+  content: any,
+  button: any,
+  textButton: any,
+  img: any,
+  price: any,
+  label: any,
+  title: any,
+  background: any
+} | {}
+
+export const useTheme = (): Theme => {
   // Sacamos el tema que esta usando el sistema
   const scheme = useColorScheme();
 
   // State para el tema
-  const [theme, setTheme] = useState({});
+  const [theme, setTheme] = useState<Theme>({});
 
   useEffect(() => {
     const styles = StyleSheet.create({
